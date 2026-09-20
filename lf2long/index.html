@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="lf2龙珠版 - 经典雷霆游戏引擎改编的龙珠同人动作游戏。提供龙珠版LF2下载、角色介绍、技能攻略及最新版本更新资讯。">
+    <meta name="keywords" content="lf2龙珠版,龙珠版LF2下载,龙珠版雷霆,龙珠同人游戏,龙珠动作游戏">
+    <title>lf2龙珠版 - 龙珠同人动作游戏下载与攻略指南</title>
+    <style>
+        :root {
+            --primary-color: #ff9800;
+            --secondary-color: #2196f3;
+            --accent-color: #ff5722;
+            --dark-bg: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-main: #ffffff;
+            --text-sub: #b0b0b0;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.6)), url('https://picsum.photos/seed/lf2dragon/1920/1080.jpg') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            margin-bottom: 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 24px;
+            color: var(--text-main);
+        }
+
+        .stat-item span {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        /* Game Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: var(--dark-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-sub);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        /* Characters Section */
+        .characters {
+            padding: 80px 0;
+            background-color: #222;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .char-card {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .char-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .char-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .char-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 20px 15px 15px;
+        }
+
+        .char-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .char-info span {
+            font-size: 12px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        /* Download Section */
+        .download-section {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/lf2tech/1920/600.jpg') center/cover;
+            text-align: center;
+        }
+
+        .download-box {
+            background-color: rgba(45, 45, 45, 0.95);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid #444;
+        }
+
+        .version-info {
+            margin-bottom: 30px;
+        }
+
+        .version-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .file-size {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 50px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #e68900;
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
+        }
+
+        .system-req {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .req-item {
+            text-align: center;
+        }
+
+        .req-item small {
+            display: block;
+            color: var(--text-sub);
+            margin-bottom: 5px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--dark-bg);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #333;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-sub);
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            margin-top: 15px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 50px 0 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero {
+                height: 400px;
+                text-align: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">LF2<span>龙珠版</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#features" class="active">游戏特色</a></li>
+                    <li><a href="#characters">角色图鉴</a></li>
+                    <li><a href="#download">下载中心</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#download" class="btn-download">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>重温经典，<br><span class="highlight">龙珠版LF2</span>震撼来袭</h1>
+                <p>基于经典雷霆引擎深度魔改，将《龙珠》热血格斗元素完美融入《风云》原版。体验前所未有的连招快感与变身特效。</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <strong>30+</strong>
+                        <span>龙珠角色</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>100+</strong>
+                        <span>技能特效</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>4P</strong>
+                        <span>同屏对战</span>
+                    </div>
+                </div>
+                <a href="#download" class="btn-download" style="font-size: 16px; padding: 12px 30px;">获取最新版本</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>游戏特色</h2>
+                    <p>不仅是复刻，更是对经典格斗游戏的二次创作与升华</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3>极速连招系统</h3>
+                        <p>优化了按键判定，支持更多样化的无限连击组合，还原龙珠中激烈的空中格斗体验。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">✨</span>
+                        <h3>华丽变身特效</h3>
+                        <p>悟空、贝吉塔等角色在能量满槽时可触发超级赛亚人变身，伴随震撼的粒子光效。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">⚔️</span>
+                        <h3>原创BOSS关卡</h3>
+                        <p>加入了原创的BOSS关卡，利用龙珠技能击败强敌，解锁隐藏剧情与特殊道具。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🛠️</span>
+                        <h3>高度自定义</h3>
+                        <p>支持地图编辑器与角色数据修改，玩家可以创造属于自己的龙珠同人世界。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section id="characters" class="characters">
+            <div class="container">
+                <div class="section-title">
+                    <h2>角色图鉴</h2>
+                    <p>集结龙珠Z经典人物，释放你的战斗潜能</p>
+                </div>
+                <div class="char-grid">
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/goku/300/400" alt="孙悟空">
+                        <div class="char-info">
+                            <h4>孙悟空</h4>
+                            <span>战士 · 变身系</span>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/vegeta/300/400" alt="贝吉塔">
+                        <div class="char-info">
+                            <h4>贝吉塔</h4>
+                            <span>战士 · 强力系</span>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/krillin/300/400" alt="克林">
+                        <div class="char-info">
+                            <h4>克林</h4>
+                            <span>辅助 · 技巧系</span>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/gohan/300/400" alt="孙悟饭">
+                        <div class="char-info">
+                            <h4>孙悟饭</h4>
+                            <span>战士 · 成长系</span>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/frieza/300/400" alt="弗利萨">
+                        <div class="char-info">
+                            <h4>弗利萨</h4>
+                            <span>BOSS · 远程系</span>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/buu/300/400" alt="布欧">
+                        <div class="char-info">
+                            <h4>魔人布欧</h4>
+                            <span>BOSS · 变形系</span>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/cell/300/400" alt="沙鲁">
+                        <div class="char-info">
+                            <h4>沙鲁</h4>
+                            <span>BOSS · 混合系</span>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/pan/300/400" alt="特兰克斯">
+                        <div class="char-info">
+                            <h4>特兰克斯</h4>
+                            <span>战士 · 招牌系</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="download-section">
+            <div class="container">
+                <div class="download-box">
+                    <h2>下载龙珠版LF2</h2>
+                    <p style="margin: 15px 0 30px; color: #ccc;">支持Windows XP / 7 / 10 / 11，无需安装任何运行库即可直接运行</p>
+                    
+                    <div class="version-info">
+                        <h3>最新版本：龙珠版LF2 v2.5.0</h3>
+                        <span class="version-tag">稳定版</span>
+                        <span class="file-size">文件大小：85 MB</span>
+                    </div>
+
+                    <a href="#" class="download-btn" onclick="alert('感谢下载！请确保来源安全。')">开始下载 (点我)</a>
+
+                    <div class="system-req">
+                        <div class="req-item">
+                            <small>操作系统</small>
+                            <strong>Windows</strong>
+                        </div>
+                        <div class="req-item">
+                            <small>处理器</small>
+                            <strong>Pentium III 800 MHz</strong>
+                        </div>
+                        <div class="req-item">
+                            <small>内存</small>
+                            <strong>128 MB RAM</strong>
+                        </div>
+                        <div class="req-item">
+                            <small>显卡</small>
+                            <strong>DirectX 8.0 兼容</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题 (FAQ)</h2>
+                    <p>解决您在下载和运行过程中的疑难杂症</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">游戏运行提示缺少文件怎么办？</div>
+                        <div class="faq-answer">
+                            请确保您下载的是完整的压缩包，并解压到纯英文路径下运行。如果是绿色免安装版，请确保系统已安装DirectX 9.0c或更高版本。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">LF2龙珠版可以和原版LF2联机吗？</div>
+                        <div class="faq-answer">
+                            不可以。龙珠版是基于原版LF2引擎深度魔改的版本，修改了核心数据文件，与原版不兼容，因此无法进行联机对战。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何解锁悟空的超级赛亚人变身？</div>
+                        <div class="faq-answer">
+                            在战斗中，当悟空的怒气槽（黄色条）满时，按下特定的变身键（通常是空格键或J键），即可触发超级赛亚人形态，大幅提升攻击力和速度。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">为什么游戏画面很卡？</div>
+                        <div class="faq-answer">
+                            这通常是因为系统资源不足。建议关闭后台其他程序，或在游戏设置中将画面质量调低。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="logo">LF2<span>龙珠版</span></a>
+                    <p style="margin-top: 15px; color: #666; font-size: 14px;">
+                        专注于提供高质量的同人格斗游戏资源，致敬经典，传承热血。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#features">游戏特色</a></li>
+                        <li><a href="#characters">角色列表</a></li>
+                        <li><a href="#download">版本下载</a></li>
+                        <li><a href="#">攻略秘籍</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">雷霆引擎官网</a></li>
+                        <li><a href="#">龙珠原作百科</a></li>
+                        <li><a href="#">同人游戏社区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 LF2龙珠版资源站. All Rights Reserved. 本站资源仅供学习交流，请于下载后24小时内删除。
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
