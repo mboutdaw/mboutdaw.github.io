@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你好吗 光良-华语经典情歌与音乐生涯回顾</title>
+    <meta name="description" content="光良官方音乐回顾页面，收录《你好吗》、《童话》、《第一次》等经典歌曲，介绍光良的音乐生涯、专辑作品及音乐理念。">
+    <meta name="keywords" content="你好吗 光良, 童话, 第一次, 光良音乐, 华语流行, 光良个人资料">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5d6d7e;
+            --accent-color: #c0392b;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 4rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(#c0392b 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(192, 57, 43, 0.4);
+        }
+
+        /* Layout Grid */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Discography Grid */
+        .discography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .album-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .album-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .album-cover {
+            height: 280px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .album-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .album-card:hover .album-cover img {
+            transform: scale(1.05);
+        }
+
+        .album-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .album-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .album-year {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .album-tags {
+            margin-top: auto;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background-color: #f0f2f5;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            color: var(--text-light);
+        }
+
+        /* Featured Song Section */
+        .featured-song {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .song-player {
+            background-color: #f1f2f6;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            background-color: #a93226;
+        }
+
+        .song-title-lg {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .song-artist {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .lyrics-preview {
+            text-align: left;
+            font-style: italic;
+            color: var(--text-light);
+            max-height: 150px;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        .lyrics-preview p {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Biography Section */
+        .bio-section {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 4rem;
+        }
+
+        .bio-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .bio-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .bio-text h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .bio-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 3rem 1rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .nav-container { flex-direction: column; height: auto; padding: 1rem; }
+            nav ul { gap: 1rem; margin-top: 1rem; font-size: 0.9rem; }
+            .featured-song { grid-template-columns: 1fr; padding: 1.5rem; }
+            .bio-content { flex-direction: column; }
+            .bio-img { width: 150px; height: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>♪</span> 光良音乐
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#discography">专辑作品</a></li>
+                    <li><a href="#featured">精选单曲</a></li>
+                    <li><a href="#about">关于光良</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>你好吗 光良</h1>
+                <p class="hero-subtitle">一首跨越时光的经典情歌，承载无数人的青春回忆与情感寄托</p>
+                <a href="#featured" class="hero-cta">聆听经典</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Featured Song Section -->
+            <section id="featured" class="featured-song">
+                <div class="song-player">
+                    <div class="play-btn">▶</div>
+                    <div class="song-title-lg">你好吗</div>
+                    <div class="song-artist">演唱：光良</div>
+                    <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">点击播放按钮聆听完整版本</p>
+                </div>
+                <div class="lyrics-preview">
+                    <p>窗外的雨还在下</p>
+                    <p>孤单的夜路要回家</p>
+                    <p>我还在傻傻地牵挂</p>
+                    <p>那曾经说好不分离的啊</p>
+                    <p>...</p>
+                    <p>（歌词节选）</p>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #999;">* 完整歌词请参考正版专辑或官方音乐平台</p>
+                </div>
+            </section>
+
+            <!-- Discography Section -->
+            <section id="discography">
+                <div class="section-title">
+                    <span>专辑作品</span>
+                    <a href="#">查看全部 &rarr;</a>
+                </div>
+                <div class="discography-grid">
+                    <!-- Album 1 -->
+                    <article class="album-card">
+                        <div class="album-cover">
+                            <img src="https://picsum.photos/seed/wonderful/400/400" alt="童话专辑封面">
+                        </div>
+                        <div class="album-info">
+                            <h3 class="album-title">童话</h3>
+                            <div class="album-year">2005年发行</div>
+                            <div class="album-tags">
+                                <span class="tag">流行</span>
+                                <span class="tag">抒情</span>
+                                <span class="tag">经典</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Album 2 -->
+                    <article class="album-card">
+                        <div class="album-cover">
+                            <img src="https://picsum.photos/seed/firsttime/400/400" alt="第一次专辑封面">
+                        </div>
+                        <div class="album-info">
+                            <h3 class="album-title">第一次</h3>
+                            <div class="album-year">2000年发行</div>
+                            <div class="album-tags">
+                                <span class="tag">R&B</span>
+                                <span class="tag">摇滚</span>
+                                <span class="tag">首张专辑</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Album 3 -->
+                    <article class="album-card">
+                        <div class="album-cover">
+                            <img src="https://picsum.photos/seed/goodday/400/400" alt="少年专辑封面">
+                        </div>
+                        <div class="album-info">
+                            <h3 class="album-title">少年</h3>
+                            <div class="album-year">2020年发行</div>
+                            <div class="album-tags">
+                                <span class="tag">励志</span>
+                                <span class="tag">流行</span>
+                                <span class="tag">回归</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Album 4 -->
+                    <article class="album-card">
+                        <div class="album-cover">
+                            <img src="https://picsum.photos/seed/autumn/400/400" alt="回甘专辑封面">
+                        </div>
+                        <div class="album-info">
+                            <h3 class="album-title">回甘</h3>
+                            <div class="album-year">2017年发行</div>
+                            <div class="album-tags">
+                                <span class="tag">爵士</span>
+                                <span class="tag">情歌</span>
+                                <span class="tag">慢板</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Biography Section -->
+            <section id="about" class="bio-section">
+                <div class="bio-content">
+                    <img src="https://picsum.photos/seed/wongliang/300/300" alt="光良照片" class="bio-img">
+                    <div class="bio-text">
+                        <h2>关于光良</h2>
+                        <p>光良（Michael Wong），马来西亚华人创作歌手。他以温暖深情的嗓音和极具感染力的创作能力闻名于华语乐坛。2000年发行首张个人专辑《第一次》，迅速打开知名度。代表作包括《童话》、《第一次》、《朋友》、《少年》等。</p>
+                        <p>他的音乐风格多变，从早期的R&B、摇滚到后来的抒情流行，始终保持着对音乐的真诚与执着。《你好吗》等歌曲更是成为了许多人心中的情感寄托，跨越了时间与地域的限制，引发广泛共鸣。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="faq-section">
+                <div class="section-title">
+                    <span>常见问题</span>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        《你好吗》收录在光良的哪张专辑中？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        《你好吗》是光良的经典代表作之一，收录于他2005年发行的专辑《童话》中。这张专辑不仅包含同名主打歌《童话》，还汇集了多首脍炙人口的流行情歌。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        光良除了《你好吗》还有哪些热门歌曲？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        除了《你好吗》，光良的知名作品还包括《第一次》、《朋友》、《少年》、《烟火》、《约定》等。这些歌曲在华语地区拥有极高的传唱度。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        在哪里可以听到光良的官方正版音乐？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        您可以通过各大主流音乐流媒体平台（如QQ音乐、网易云音乐、酷狗音乐、Apple Music等）搜索“光良”或具体歌名，收听正版音乐。支持正版是鼓励音乐人创作的重要方式。
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">艺人简介</a></li>
+                    <li><a href="#">音乐历程</a></li>
+                    <li><a href="#">新闻动态</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>音乐作品</h4>
+                <ul>
+                    <li><a href="#">专辑列表</a></li>
+                    <li><a href="#">精选集</a></li>
+                    <li><a href="#">现场演出</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">官方网站</a></li>
+                    <li><a href="#">官方微博</a></li>
+                    <li><a href="#">官方微信</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 光良音乐回顾. All Rights Reserved. 仅供展示与学习使用，非官方网站。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
